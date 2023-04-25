@@ -3,6 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose")
 const pino = require('pino-http')()
 const { Post } = require("./posts.model");
+require('dotenv').config()
 
 const app = express()
 app.use(pino)
@@ -30,7 +31,7 @@ app.post(`/api/post`, async (req, res) => {
 const start = async () => {
     try {
         await mongoose.connect(
-            ""
+            process.env.MONGO_URI
         );
         app.listen(port, () => {
             console.log(`Node API is listening on ${port}`)
