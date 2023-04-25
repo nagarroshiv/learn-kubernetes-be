@@ -30,7 +30,7 @@ app.post(`/api/post`, async (req, res) => {
 const start = async () => {
     try {
         await mongoose.connect(
-            "mongodb+srv://root:ABC123@cluster0.021zaql.mongodb.net/test"
+            ""
         );
         app.listen(port, () => {
             console.log(`Node API is listening on ${port}`)
